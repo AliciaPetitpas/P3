@@ -8,6 +8,8 @@
   src: url("./Shrikhand/Shrikhand-Regular.ttf");
 }
 
+/* LOADER */
+/* BASIC INFO */
 body, html {
   font-family: 'Roboto';
   color: black;
@@ -89,20 +91,6 @@ header .book {
   padding-bottom: 30px;
 }
 
-header .book input {
-  padding: 15px;
-  font-size: 18px;
-  font-weight: bolder;
-  font-family: 'Roboto';
-  color: white;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(170deg, #FF79DA, #9356dc);
-  -webkit-box-shadow: 0 0 10px 5px #EAEAEA;
-          box-shadow: 0 0 10px 5px #EAEAEA;
-  cursor: pointer;
-}
-
 header li {
   font-weight: bolder;
   font-size: 16px;
@@ -135,6 +123,10 @@ header .number {
   margin-right: -10px;
 }
 
+header .number:hover {
+  background-color: #9356dc;
+}
+
 /* MAIN INDEX */
 #main {
   background-color: #F6F6F6;
@@ -154,6 +146,7 @@ header .number {
 }
 
 #main .card {
+  position: relative;
   width: 80%;
   height: 200px;
   margin: 20px;
@@ -186,9 +179,9 @@ header .number {
 
 #main .card .new {
   width: 70px;
-  position: relative;
-  bottom: 90%;
-  left: 75%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   padding: 8px;
   border-radius: 5px;
   background-color: #99E2D0;
@@ -197,30 +190,27 @@ header .number {
 }
 
 #main .card .like {
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  margin: -20px 10px 0 0;
-  cursor: pointer;
-}
-
-#main .card .like i:nth-child(1) {
-  color: #808080;
-}
-
-#main .card .like i:nth-child(1):active {
-  display: none;
+  width: 0;
+  position: relative;
+  bottom: 10%;
+  left: 95%;
+  line-height: 0;
 }
 
 #main .card .like i:nth-child(2) {
-  display: none;
+  position: absolute;
+  z-index: -1;
 }
 
-#main .card .like i:nth-child(2)::after {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #9356dc;
+#main .card:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#main .card:hover .like i:nth-child(2) {
+  display: none;
 }
 
 /* MAIN PAGES RESTAURANTS */
@@ -233,8 +223,8 @@ header .number {
 }
 
 #page img {
-  height: 50vh;
-  position: absolute;
+  height: 30vh;
+  position: relative;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -242,8 +232,6 @@ header .number {
 #page .restaurant {
   background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
-  position: relative;
-  top: 40vh;
 }
 
 #page .restaurant .title, #page .restaurant .food, #page .restaurant .food_title {
@@ -267,11 +255,16 @@ header .number {
 
 #page .restaurant .title .like {
   font-size: 30px;
-  padding-left: 50px;
+  position: relative;
+  left: 50px;
+  line-height: 0;
 }
 
-#page .restaurant .title .like .fas {
-  display: none;
+#page .restaurant .title .like i:nth-child(2) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
 #page .restaurant .food_title {
@@ -335,20 +328,6 @@ header .number {
   padding: 50px;
 }
 
-#page .restaurant .order input {
-  width: 200px;
-  padding: 10px;
-  font-size: 18px;
-  font-family: 'Roboto';
-  color: white;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(170deg, #FF79DA, #9356dc);
-  -webkit-box-shadow: 0 0 10px 5px #EAEAEA;
-          box-shadow: 0 0 10px 5px #EAEAEA;
-  cursor: pointer;
-}
-
 /* FOOTER */
 footer, .footer p, .footer ul {
   display: -webkit-box;
@@ -390,7 +369,50 @@ footer li i, .footer p li i, .footer ul li i {
   padding-right: 10px;
 }
 
-/* ANIMATIONS */
+/* ANIMATION BOUTONS */
+input.book-btn, input.order-btn {
+  width: auto;
+  padding: 15px;
+  font-size: 18px;
+  font-family: 'Roboto';
+  color: white;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(170deg, #FF79DA, #9356dc);
+  -webkit-box-shadow: 5px 5px 10px 5px #EAEAEA;
+          box-shadow: 5px 5px 10px 5px #EAEAEA;
+  cursor: pointer;
+}
+
+input.book-btn:hover, input.order-btn:hover {
+  -webkit-filter: brightness(115%);
+          filter: brightness(115%);
+  -webkit-box-shadow: 5px 5px 10px 5px #808080;
+          box-shadow: 5px 5px 10px 5px #808080;
+  -webkit-transform: scale(1.015);
+          transform: scale(1.015);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* ANIMATION COEURS */
+.like {
+  cursor: pointer;
+  color: black;
+}
+
+.like:hover i:nth-child(1) {
+  display: none;
+}
+
+.like:hover i:nth-child(2) {
+  -webkit-transform: scale(0.015);
+          transform: scale(0.015);
+  color: #9356dc;
+  -webkit-animation: all 3s ease-in-out;
+          animation: all 3s ease-in-out;
+}
+
 /* MEDIA QUERIES */
 /* TABLETTE */
 @media (min-width: 768px) and (max-width: 991px) {
