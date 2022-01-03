@@ -11,9 +11,473 @@
 body, html {
     font-family: 'Roboto';
     color: black;
+    margin: 0;
 }
 
+$primary: #9356dc;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$dark-gray: #EAEAEA;
+$light-gray: #F6F6F6;
+$icon: #808080;
+$footer: #353535;
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+/* HEADER */
+
 header {
-    justify-content: center;
+    margin: 0;
+    .logo, .location, .book, h2, .menu_list, .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        padding-top: 30px;
+        .return_mobile {
+            display: none;
+        }
+    }
+    .location {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: $dark-gray;
+        box-shadow: inset 0 2px 5px darkgray; 
+    }
+    p {
+        margin-top: 0;
+    }
+    form input {
+        border: none;
+        background-color: $dark-gray;
+        color: black;
+        font-family: 'Roboto';
+        font-size: 16px;
+        width: 110px;
+    }
+    .book {
+        display: flex;
+        flex-direction: column;
+        background-color: $light-gray;
+        padding-bottom: 30px;
+        input {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bolder;
+            font-family: 'Roboto';
+            color: white;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(170deg, $secondary, $primary);
+            box-shadow: 0 0 10px 5px $dark-gray;
+            cursor: pointer;
+        }
+    }
+    li {
+        font-weight: bolder;
+        font-size: 16px;
+        padding: 25px;
+        border-radius: 20px;
+        background-color: $light-gray;
+        box-shadow: 0 0 10px 5px $dark-gray;
+        margin: 30px 30px 30px 0;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(147, 86, 220, 0.1);
+        }
+    }
+    li i {
+        color: $icon;
+        padding-right: 15px;
+    }
+    .number {
+        position: relative;
+        color: white;
+        background-color: $primary;
+        border-radius: 25px;
+        height: 0;
+        width: 0;
+        padding: 15px 15px;
+        margin-right: -10px;
+    }
+}
+
+/* MAIN INDEX */
+
+#main {
+    background-color: $light-gray;
+    padding: 5px 0 20px 0;
+    h2, .restaurants, .like, .new {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+        height: 200px;
+        margin: 20px;
+        border-radius: 25px;
+        box-shadow: 0 0 10px 5px $dark-gray;
+        padding-bottom: 5px;
+        img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 25px 25px 0 0;
+        }
+        h2 {
+            font-size: 20px;
+            justify-content: left;
+            margin: 5px 0 5px 10px;
+        }
+        p {
+            font-size: 16px;
+            margin: 5px 0 5px 10px;
+        }
+        .new {
+            width: 70px;
+            position: relative;
+            bottom: 90%;
+            left: 75%;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: $tertiary;
+            font-weight: bolder;
+            color: darken($tertiary, 50%);
+        }
+        .like {
+            justify-content: right;
+            margin: -20px 10px 0 0;
+            cursor: pointer;
+            i:nth-child(1) {
+                color: $icon;
+                &:active {
+                    display: none;
+                }
+            }
+            i:nth-child(2) {
+                display: none;
+                &::after {
+                    display: flex;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+/* MAIN PAGES RESTAURANTS */
+
+#page {
+    margin: 0;
+    .img_restaurant img,.restaurant {
+        width: 100%;
+    }
+    img {
+        height: 50vh;
+        position: absolute;
+        object-fit: cover;
+    }
+    .restaurant {
+        background-color: $light-gray;
+        border-radius: 40px 40px 0 0;
+        position: relative;
+        top: 40vh;
+        .title, .food, .food_title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            font-family: 'Shrikhand';
+            justify-content: center;
+            .like {
+                font-size: 30px;
+                padding-left: 50px;
+                .fas {
+                    display: none;
+                }
+            }
+        }
+        .food_title {
+            color: $icon;
+            text-transform: uppercase;
+            font-weight: lighter;
+            p {
+                border-bottom: 3px solid $tertiary;
+              }
+        }
+        .food {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        .food_card {
+            background-color: white;
+            border-radius: 25px;
+            width: 25%;
+            height: 80px;
+            padding: 10px;
+            margin: 20px;
+            h1 {
+                font-size: 18px;
+            }
+            .price, .check i {
+                width: 40px;
+                position: relative;
+                left: 90%;
+                margin: 0;
+            }
+            .price {
+                top: -30px;
+            }
+            .check i {
+                top: -90px;
+                display: none;
+            }
+        }
+        }
+        .order {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            input {
+                width: 200px;
+                padding: 10px;
+                font-size: 18px;
+                font-family: 'Roboto';
+                color: white;
+                border: none;
+                border-radius: 25px;
+                background: linear-gradient(170deg, $secondary, $primary);
+                box-shadow: 0 0 10px 5px $dark-gray;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* FOOTER */
+
+footer, .footer p, .footer ul {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: $footer;
+    p {
+        font-family: "Shrikhand";
+        color: white;
+        font-size: 20px;
+    }
+    ul {
+        flex-direction: row;
+        padding: 0;
+        color: white;
+        a {
+            color: white;
+        }
+    }
+    li {
+        padding: 0 50px 0 50px;
+        i {
+            padding-right: 10px;
+        }
+    }
+}
+
+/* ANIMATIONS */
+
+
+
+/* MEDIA QUERIES */
+
+/* TABLETTE */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* HEADER */
+
+    header {
+        .logo {
+            padding: 15px;
+            .return_mobile {
+                display: flex;
+                position: absolute;
+                left: 5%;
+            }
+            img {
+                height: 30px;
+            }
+        }
+        .location {
+            margin: 0;
+        }
+        li {
+            text-align: center;
+        }
+    }
+
+    /* MAIN INDEX */
+
+    #main {
+        .restaurants {
+            flex-flow: column wrap;
+        }
+        .card .new {
+                left: 80%;
+        }
+    }
+
+    /* MAIN PAGES RESTAURANTS */
+
+    #page {
+        img {
+            height: 35vh;
+        }
+        .restaurant {
+            top: 30vh;
+            .food {
+                flex-flow: column wrap;
+                .food_card {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1, h2 {
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    /* HEADER */
+
+    header {
+        .logo {
+            padding: 15px;
+            .return_mobile {
+                display: flex;
+                position: absolute;
+                left: 5%;
+            }
+            img {
+                height: 30px;
+            }
+        }
+        .location {
+            margin: 0;
+        }
+        .book {
+            padding-bottom: 50px;
+            text-align: center;
+            p {
+                margin: 0 10px 20px 10px;
+            };
+        }
+        .menu h2 {
+            margin: 20px 0 0 20px;
+            justify-content: left;
+        }
+        .menu_list {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            li {
+                text-align: center;
+                margin: 0 60px 0 30px;
+                width: 250px;
+            }
+            .number {
+                width: 0;
+                position: relative;
+                top: 50px;
+                right: 150px;
+            }
+        }
+    }
+
+    /* MAIN INDEX */
+
+    #main {
+        margin-top: 50px;
+        h2 {
+            margin: 20px 0 0 20px;
+            justify-content: left;
+        }
+        .restaurants {
+            display: flex;
+            flex-direction: column;
+        }
+        .card .new {
+            left: 65%;
+        }
+    }
+
+    /* MAIN PAGES RESTAURANTS */
+
+    #page {
+        img {
+            height: 25vh;
+        }
+        .restaurant {
+            top: 20vh;
+            .title {
+                justify-content: left;
+                padding: 20px 0 0 10px;
+            }
+            .food_title {
+                justify-content: left;
+                padding-left: 10px;
+            }
+            .food {
+                flex-flow: column wrap;
+                align-items: start;
+                .food_card {
+                    width: 90%;
+                    margin: 10px;
+                    height: 55px;
+                    h1, p {
+                        margin: 5px;
+                    }
+                }
+            }
+            .order {
+                padding: 85px;
+            }
+            
+        }
+        
+    }
+
+    /* FOOTER */
+
+    footer, .footer p, .footer ul {
+        flex-direction: column;
+        justify-content: left;
+        align-items: start;
+        padding-left: 10px;
+        li {
+            padding: 5px 0 0 0;
+        }
+    }
 }

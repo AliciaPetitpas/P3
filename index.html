@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initiale-scale=1.0">
-        <link rel="stylesheet" href="sass/style.scss">
+        <link rel="stylesheet" href="sass/style.css">
         <link rel="icon" href="images/logo.png">
         <link href="https://fonts.google.com/specimen/Roboto" rel="stylesheet">
         <link href="https://fonts.google.com/specimen/Shrikhand" rel="stylesheet">
@@ -38,9 +38,12 @@
                 <h2>Fonctionnement</h2>
                 <nav>
                     <ul class="menu_list">
-                        <li>1<i class="fas fa-mobile-alt"></i>Choississez un restaurant</li>
-                        <li>2<i class="fas fa-list-ul"></i>Composez votre menu</li>
-                        <li>3<i class="fas fa-store"></i>Dégustez au restaurant</li>
+                        <li class="number">1</li>
+                        <li><i class="fas fa-mobile-alt"></i>Choississez un restaurant</li>
+                        <li class="number">2</li>
+                        <li><i class="fas fa-list-ul"></i>Composez votre menu</li>
+                        <li class="number">3</li>
+                        <li><i class="fas fa-store"></i>Dégustez au restaurant</li>
                     </ul>
                 </nav>
             </div>
@@ -49,14 +52,15 @@
 
         <!--MAIN-->
 
-        <main>
+        <main id="main">
 
-            <section id="restaurants">
+            <section>
 
                 <h2>Restaurants</h2>
 
+                <div class="restaurants">
+                
                 <div class="card">
-                    <div class="new">Nouveau</div>
                     <a href="lapalettedugout.html"><img src="images/restaurants/one.jpg" alt="La palette du goût"></a>
                     <h2>La palette du goût</h2>
                     <p>Ménilmontant</p>
@@ -64,10 +68,10 @@
                         <i class="far fa-heart"></i>
                         <i class="fas fa-heart"></i>
                     </div>
-                </div>
-                
-                <div class="card">
                     <div class="new">Nouveau</div>
+                </div>
+            
+                <div class="card">
                     <a href="lanoteenchantee.html"><img src="images/restaurants/two.jpg" alt="La note enchantée"></a>
                     <h2>La note enchantée</h2>
                     <p>Charonne</p>
@@ -75,6 +79,7 @@
                         <i class="far fa-heart"></i>
                         <i class="fas fa-heart"></i>
                     </div>
+                    <div class="new">Nouveau</div>
                 </div>
 
                 <div class="card">
@@ -96,6 +101,7 @@
                         <i class="fas fa-heart"></i>
                     </div>
                 </div>
+                </div>
 
             </section>
 
@@ -106,7 +112,7 @@
         <footer>
 
             <div class="footer">
-                <img src="images/logo.png" alt="logo">
+                <p>ohmyfood</p>
                 <ul>
                     <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
                     <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>

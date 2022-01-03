@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initiale-scale=1.0">
-        <link rel="stylesheet" href="sass/style.scss">
+        <link rel="stylesheet" href="sass/style.css">
         <link rel="icon" href="images/logo.png">
         <script src="https://kit.fontawesome.com/6b8c533e6f.js" crossorigin="anonymous"></script>
-        <title>OhMyFood</title>
+        <title>La note enchantée</title>
     </head>
 
     <body>
@@ -24,25 +24,27 @@
 
         <!--MAIN-->
 
-        <main>
+        <main id="page">
 
             <div class="img_restaurant">
                 <img src="images/restaurants/two.jpg" alt="La note enchantée">
             </div>
 
             <div class="restaurant">
-                <h1>La note enchantée</h1>
+                <div class="title"><h1>La note enchantée</h1>
                 <div class="like">
                     <i class="far fa-heart"></i>
                     <i class="fas fa-heart"></i>
                 </div>
+                </div>
+
+                <div class="food_title"><p>Entrées</p></div>
 
                 <div class="food">
-                    <h3>Entrées</h3>
                     <div class="food_card">
                         <h1>Ravioles de foie gras</h1>
                         <p>Accompagnés de leur crème à la truffe</p>
-                        <h2>25€</h2>
+                        <div class="price"><h1>25€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -50,7 +52,7 @@
                     <div class="food_card">
                         <h1>Caviar osciètre</h1>
                         <p>Sur blini à la farine de blé noir</p>
-                        <h2>35€</h2>
+                        <div class="price"><h1>35€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -58,7 +60,7 @@
                     <div class="food_card">
                         <h1>Homard et espuma de potiron</h1>
                         <p>Mariné aux zestes d'orange</p>
-                        <h2>20€</h2>
+                        <div class="price"><h1>20€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -66,19 +68,20 @@
                     <div class="food_card">
                         <h1>Fois gras de canard cuit entier</h1>
                         <p>Confiture de figue et pain toasté</p>
-                        <h2>35€</h2>
+                        <div class="price"><h1>35€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
 
+                <div class="food_title"><p>Plats</p></div>
+
                 <div class="food">
-                    <h3>Plats</h3>
                     <div class="food_card">
                         <h1>Noix de coquilles Saint-Jacques</h1>
                         <p>Sur lit de purée de céleri-rave</p>
-                        <h2>40€</h2>
+                        <div class="price"><h1>40€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -86,7 +89,7 @@
                     <div class="food_card">
                         <h1>Langoustine poêlée</h1>
                         <p>Purée de patate douce</p>
-                        <h2>35€</h2>
+                        <div class="price"><h1>35€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -94,19 +97,20 @@
                     <div class="food_card">
                         <h1>Mijoté de queue de bœuf</h1>
                         <p>Et riz sauvage aux zestes de citron</p>
-                        <h2>44€</h2>
+                        <div class="price"><h1>44€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
 
+                <div class="food_title"><p>Desserts</p></div>
+
                 <div class="food">
-                    <h3>Desserts</h3>
                     <div class="food_card">
                         <h1>Macaron noisette et chocolat</h1>
                         <p>Glace au caramel brun et sel de Guérande</p>
-                        <h2>18€</h2>
+                        <div class="price"><h1>18€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -114,7 +118,7 @@
                     <div class="food_card">
                         <h1>Baba au rhum revisité</h1>
                         <p>Avec son coulis de citron</p>
-                        <h2>22€</h2>
+                        <div class="price"><h1>22€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
@@ -122,17 +126,17 @@
                     <div class="food_card">
                         <h1>Tarte au citron meringuée</h1>
                         <p>Destructurée</p>
-                        <h2>23€</h2>
+                        <div class="price"><h1>23€</h1></div>
                         <div class="check">
                             <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <div class="order">
+                    <input type="button" value="Commander">
+                </div>
 
-            <div class="order">
-                <input class="order" type="button" value="Commander">
             </div>
 
         </main>
@@ -142,7 +146,7 @@
         <footer>
 
             <div class="footer">
-                <img src="images/logo.png" alt="logo">
+                <p>ohmyfood</p>
                 <ul>
                     <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
                     <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
