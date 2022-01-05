@@ -43,6 +43,109 @@ h2 {
 
 /* LOADER */
 
+.loader-wrapper {
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+  }
+
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    25% {
+      transform: rotate(180deg);
+    }
+    
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    75% {
+      transform: rotate(360deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loader-inner {
+    0% {
+      height: 0%;
+    }
+    
+    25% {
+      height: 0%;
+    }
+    
+    50% {
+      height: 100%;
+    }
+    
+    75% {
+      height: 100%;
+    }
+    
+    100% {
+      height: 0%;
+    }
+  }
+
+/* ANIMATION APPARITION INDEX & MENU */
+
+@keyframes fadein {
+    from {
+        opacity:0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity:1;
+        transform: translateY(0px);
+    }
+}
+
+/*header, main, footer {
+    animation: fadein 2s ease-in-out;
+}*/
+
+.food_card:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.food_card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.food_card:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
 /* ANIMATION BOUTONS */
 
 input.book-btn, input.order-btn {
@@ -66,7 +169,31 @@ input.book-btn, input.order-btn {
 
 /* ANIMATION CHECK MENU */
 
-/* ANIMATION COEURS */
+@keyframes checking {
+    from {
+        opacity: 1;
+        transform: translateX(90px);
+        overflow: hidden;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }    
+}
+
+/* ANIMATION LIKE */
 
 .like {
     color: black;
@@ -76,8 +203,35 @@ input.book-btn, input.order-btn {
     i:nth-child(2) {
         position: absolute;
         opacity: 0;
+        background: linear-gradient(40deg, $secondary, $primary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    &:hover {
+        cursor: pointer;
+        i:nth-child(2) {
+            animation: opacity 2s ease-in;
+        }
     }
 }
+
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* HEADER */
 
 header {
@@ -228,7 +382,7 @@ header {
             justify-content: center;
             .like {
                 font-size: 30px;
-                left: 50px;
+                left: 5%;
             }
         }
         .food_title {
@@ -241,7 +395,7 @@ header {
                     content: "";
                     position: absolute;
                     left: 0%;
-                    bottom: 0.5px;
+                    bottom: -2.5px;
                     width: 40px;
                     height: 4px;
                     background-color: $tertiary;
@@ -250,8 +404,9 @@ header {
         }
         .food {
             flex-flow: row wrap;
-            justify-content: space-around;
+            justify-content: space-around;            
         .food_card {
+            cursor: pointer;
             background-color: white;
             border-radius: 25px;
             width: 25%;
@@ -259,24 +414,46 @@ header {
             padding: 10px;
             margin: 20px;
             box-shadow: 5px 5px 10px 5px $dark-gray;
+            animation: fadein 2s ease-in-out;
+            position: relative;
             &:hover {
                 box-shadow: 5px 5px 10px 5px $icon;
+                text-overflow: ellipsis;
+                .check {
+                    background: $tertiary;
+                    border-radius: 0 25px 25px 0;                    
+                    animation: checking 0.5s ease-in-out;
+                }
+                i {
+                    color: white;
+                    opacity: 1;
+                    animation: rotate 0.5s ease-in-out;
+                }
             }
             h1 {
                 font-size: 18px;
             }
-            .price, .check i {
-                width: 40px;
-                position: relative;
-                left: 90%;
-                margin: 0;
-            }
             .price {
-                top: -30px;
+                width: 40px;
+                position: absolute;
+                top: 25%;
+                right: 5%;
             }
-            .check i {
-                top: -90px;
-                display: none;
+            .check {
+                opacity: 1;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 90px;
+                height: 100%;
+            }
+            i {
+                opacity: 0;
+                font-size: 25px;
+                display: flex;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
             }
         }
         }

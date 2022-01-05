@@ -33,6 +33,170 @@ h2 {
 }
 
 /* LOADER */
+.loader-wrapper {
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 90;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  -webkit-animation: loader 2s infinite ease;
+          animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  -webkit-animation: loader-inner 2s infinite ease-in;
+          animation: loader-inner 2s infinite ease-in;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+/* ANIMATION APPARITION INDEX & MENU */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+/*header, main, footer {
+    animation: fadein 2s ease-in-out;
+}*/
+.food_card:nth-child(1) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.food_card:nth-child(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.food_card:nth-child(3) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
 /* ANIMATION BOUTONS */
 input.book-btn, input.order-btn {
   width: auto;
@@ -60,7 +224,64 @@ input.book-btn:hover, input.order-btn:hover {
 }
 
 /* ANIMATION CHECK MENU */
-/* ANIMATION COEURS */
+@-webkit-keyframes checking {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(90px);
+            transform: translateX(90px);
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes checking {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(90px);
+            transform: translateX(90px);
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* ANIMATION LIKE */
 .like {
   color: black;
   width: 0;
@@ -71,6 +292,49 @@ input.book-btn:hover, input.order-btn:hover {
 .like i:nth-child(2) {
   position: absolute;
   opacity: 0;
+  background: linear-gradient(40deg, #FF79DA, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.like:hover {
+  cursor: pointer;
+}
+
+.like:hover i:nth-child(2) {
+  -webkit-animation: opacity 2s ease-in;
+          animation: opacity 2s ease-in;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* HEADER */
@@ -283,7 +547,7 @@ header .number:hover {
 
 #page .restaurant .title .like {
   font-size: 30px;
-  left: 50px;
+  left: 5%;
 }
 
 #page .restaurant .food_title {
@@ -300,7 +564,7 @@ header .number:hover {
   content: "";
   position: absolute;
   left: 0%;
-  bottom: 0.5px;
+  bottom: -2.5px;
   width: 40px;
   height: 4px;
   background-color: #99E2D0;
@@ -316,6 +580,7 @@ header .number:hover {
 }
 
 #page .restaurant .food .food_card {
+  cursor: pointer;
   background-color: white;
   border-radius: 25px;
   width: 25%;
@@ -324,31 +589,64 @@ header .number:hover {
   margin: 20px;
   -webkit-box-shadow: 5px 5px 10px 5px #EAEAEA;
           box-shadow: 5px 5px 10px 5px #EAEAEA;
+  -webkit-animation: fadein 2s ease-in-out;
+          animation: fadein 2s ease-in-out;
+  position: relative;
 }
 
 #page .restaurant .food .food_card:hover {
   -webkit-box-shadow: 5px 5px 10px 5px #808080;
           box-shadow: 5px 5px 10px 5px #808080;
+  text-overflow: ellipsis;
+}
+
+#page .restaurant .food .food_card:hover .check {
+  background: #99E2D0;
+  border-radius: 0 25px 25px 0;
+  -webkit-animation: checking 0.5s ease-in-out;
+          animation: checking 0.5s ease-in-out;
+}
+
+#page .restaurant .food .food_card:hover i {
+  color: white;
+  opacity: 1;
+  -webkit-animation: rotate 0.5s ease-in-out;
+          animation: rotate 0.5s ease-in-out;
 }
 
 #page .restaurant .food .food_card h1 {
   font-size: 18px;
 }
 
-#page .restaurant .food .food_card .price, #page .restaurant .food .food_card .check i {
-  width: 40px;
-  position: relative;
-  left: 90%;
-  margin: 0;
-}
-
 #page .restaurant .food .food_card .price {
-  top: -30px;
+  width: 40px;
+  position: absolute;
+  top: 25%;
+  right: 5%;
 }
 
-#page .restaurant .food .food_card .check i {
-  top: -90px;
-  display: none;
+#page .restaurant .food .food_card .check {
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90px;
+  height: 100%;
+}
+
+#page .restaurant .food .food_card i {
+  opacity: 0;
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #page .restaurant .order {
