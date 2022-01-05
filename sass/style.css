@@ -274,7 +274,17 @@ header .number:hover {
 }
 
 #page .restaurant .food_title p {
-  border-bottom: 3px solid #99E2D0;
+  position: relative;
+}
+
+#page .restaurant .food_title p ::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0.5px;
+  width: 40px;
+  height: 4px;
+  background-color: #99E2D0;
 }
 
 #page .restaurant .food {
@@ -293,6 +303,13 @@ header .number:hover {
   height: 80px;
   padding: 10px;
   margin: 20px;
+  -webkit-box-shadow: 5px 5px 10px 5px #EAEAEA;
+          box-shadow: 5px 5px 10px 5px #EAEAEA;
+}
+
+#page .restaurant .food .food_card:hover {
+  -webkit-box-shadow: 5px 5px 10px 5px #808080;
+          box-shadow: 5px 5px 10px 5px #808080;
 }
 
 #page .restaurant .food .food_card h1 {

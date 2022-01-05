@@ -10,7 +10,43 @@
 
 /* LOADER */
 
-/* BASIC INFO */
+/* ANIMATION BOUTONS */
+
+input.book-btn, input.order-btn {
+    width: auto;
+    padding: 15px;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: white;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(170deg, $secondary, $primary);
+    box-shadow: 5px 5px 10px 5px $dark-gray;
+    cursor: pointer;
+    &:hover {
+        filter: brightness(115%);
+        box-shadow: 5px 5px 10px 5px $icon;
+        transform: scale(1.015);
+        transition: all .3s ease-in-out;
+    }
+}
+
+/* ANIMATION CHECK MENU */
+
+/* ANIMATION COEURS */
+
+.like {
+    color: black;
+    width: 0;    
+    line-height: 0;
+    position: relative;
+    i:nth-child(2) {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+/* SETTINGS PAR DEFAUT */
 
 body, html {
     font-family: 'Roboto';
@@ -158,22 +194,12 @@ header {
             color: darken($tertiary, 50%);
         }
         .like {
-            width: 0;
-            position: relative;
             bottom: 10%;
             left: 95%;
-            line-height: 0;
-            i:nth-child(2) {
-                position: absolute;
-                z-index: -1;
-            }
         }
         &:hover {
             transform: scale(1.02);
             transition: all .3s ease-in-out;
-            .like i:nth-child(2) {
-                display: none;
-            }
         }
     }
 }
@@ -203,15 +229,7 @@ header {
             justify-content: center;
             .like {
                 font-size: 30px;
-                position: relative;
                 left: 50px;
-                line-height: 0;
-                i:nth-child(2) {
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    z-index: -1;
-                }
             }
         }
         .food_title {
@@ -219,12 +237,21 @@ header {
             text-transform: uppercase;
             font-weight: lighter;
             p {
-                border-bottom: 3px solid $tertiary;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0%;
+                    bottom: 0.5px;
+                    width: 40px;
+                    height: 4px;
+                    background-color: $tertiary;
+                }
               }
         }
         .food {
-        flex-flow: row wrap;
-        justify-content: space-around;
+            flex-flow: row wrap;
+            justify-content: space-around;
         .food_card {
             background-color: white;
             border-radius: 25px;
@@ -232,6 +259,10 @@ header {
             height: 80px;
             padding: 10px;
             margin: 20px;
+            box-shadow: 5px 5px 10px 5px $dark-gray;
+            &:hover {
+                box-shadow: 5px 5px 10px 5px $icon;
+            }
             h1 {
                 font-size: 18px;
             }
@@ -283,44 +314,6 @@ footer, .footer p, .footer ul {
         padding: 0 50px 0 50px;
         i {
             padding-right: 10px;
-        }
-    }
-}
-
-/* ANIMATION BOUTONS */
-
-input.book-btn, input.order-btn {
-    width: auto;
-    padding: 15px;
-    font-size: 18px;
-    font-family: 'Roboto';
-    color: white;
-    border: none;
-    border-radius: 25px;
-    background: linear-gradient(170deg, $secondary, $primary);
-    box-shadow: 5px 5px 10px 5px $dark-gray;
-    cursor: pointer;
-    &:hover {
-        filter: brightness(115%);
-        box-shadow: 5px 5px 10px 5px $icon;
-        transform: scale(1.015);
-        transition: all .3s ease-in-out;
-    }
-}
-
-/* ANIMATION COEURS */
-
-.like {
-    cursor: pointer;
-    color: black;
-    &:hover {
-        i:nth-child(1) {
-            display: none;
-        }
-        i:nth-child(2) {
-            transform: scale(0.015);
-            color: $primary;
-            animation: all 3s ease-in-out;
         }
     }
 }
