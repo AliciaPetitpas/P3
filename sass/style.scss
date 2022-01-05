@@ -8,6 +8,39 @@
     src: url("./Shrikhand/Shrikhand-Regular.ttf");
 }
 
+/* SETTINGS PAR DEFAUT */
+
+body, html {
+    font-family: 'Roboto';
+    color: black;
+    margin: 0;
+}
+
+$primary: #9356dc;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$dark-gray: #EAEAEA;
+$light-gray: #F6F6F6;
+$icon: #808080;
+$footer: #353535;
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
 /* LOADER */
 
 /* ANIMATION BOUTONS */
@@ -45,40 +78,6 @@ input.book-btn, input.order-btn {
         opacity: 0;
     }
 }
-
-/* SETTINGS PAR DEFAUT */
-
-body, html {
-    font-family: 'Roboto';
-    color: black;
-    margin: 0;
-}
-
-$primary: #9356dc;
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
-$dark-gray: #EAEAEA;
-$light-gray: #F6F6F6;
-$icon: #808080;
-$footer: #353535;
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-h1 {
-    font-size: 42px;
-}
-
-h2 {
-    font-size: 30px;
-}
-
 /* HEADER */
 
 header {

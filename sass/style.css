@@ -8,8 +8,7 @@
   src: url("./Shrikhand/Shrikhand-Regular.ttf");
 }
 
-/* LOADER */
-/* BASIC INFO */
+/* SETTINGS PAR DEFAUT */
 body, html {
   font-family: 'Roboto';
   color: black;
@@ -31,6 +30,47 @@ h1 {
 
 h2 {
   font-size: 30px;
+}
+
+/* LOADER */
+/* ANIMATION BOUTONS */
+input.book-btn, input.order-btn {
+  width: auto;
+  padding: 15px;
+  font-size: 18px;
+  font-family: 'Roboto';
+  color: white;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(170deg, #FF79DA, #9356dc);
+  -webkit-box-shadow: 5px 5px 10px 5px #EAEAEA;
+          box-shadow: 5px 5px 10px 5px #EAEAEA;
+  cursor: pointer;
+}
+
+input.book-btn:hover, input.order-btn:hover {
+  -webkit-filter: brightness(115%);
+          filter: brightness(115%);
+  -webkit-box-shadow: 5px 5px 10px 5px #808080;
+          box-shadow: 5px 5px 10px 5px #808080;
+  -webkit-transform: scale(1.015);
+          transform: scale(1.015);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* ANIMATION CHECK MENU */
+/* ANIMATION COEURS */
+.like {
+  color: black;
+  width: 0;
+  line-height: 0;
+  position: relative;
+}
+
+.like i:nth-child(2) {
+  position: absolute;
+  opacity: 0;
 }
 
 /* HEADER */
@@ -190,16 +230,8 @@ header .number:hover {
 }
 
 #main .card .like {
-  width: 0;
-  position: relative;
   bottom: 10%;
   left: 95%;
-  line-height: 0;
-}
-
-#main .card .like i:nth-child(2) {
-  position: absolute;
-  z-index: -1;
 }
 
 #main .card:hover {
@@ -207,10 +239,6 @@ header .number:hover {
           transform: scale(1.02);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-}
-
-#main .card:hover .like i:nth-child(2) {
-  display: none;
 }
 
 /* MAIN PAGES RESTAURANTS */
@@ -255,16 +283,7 @@ header .number:hover {
 
 #page .restaurant .title .like {
   font-size: 30px;
-  position: relative;
   left: 50px;
-  line-height: 0;
-}
-
-#page .restaurant .title .like i:nth-child(2) {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
 }
 
 #page .restaurant .food_title {
@@ -277,7 +296,7 @@ header .number:hover {
   position: relative;
 }
 
-#page .restaurant .food_title p ::after {
+#page .restaurant .food_title p::after {
   content: "";
   position: absolute;
   left: 0%;
@@ -384,50 +403,6 @@ footer li, .footer p li, .footer ul li {
 
 footer li i, .footer p li i, .footer ul li i {
   padding-right: 10px;
-}
-
-/* ANIMATION BOUTONS */
-input.book-btn, input.order-btn {
-  width: auto;
-  padding: 15px;
-  font-size: 18px;
-  font-family: 'Roboto';
-  color: white;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(170deg, #FF79DA, #9356dc);
-  -webkit-box-shadow: 5px 5px 10px 5px #EAEAEA;
-          box-shadow: 5px 5px 10px 5px #EAEAEA;
-  cursor: pointer;
-}
-
-input.book-btn:hover, input.order-btn:hover {
-  -webkit-filter: brightness(115%);
-          filter: brightness(115%);
-  -webkit-box-shadow: 5px 5px 10px 5px #808080;
-          box-shadow: 5px 5px 10px 5px #808080;
-  -webkit-transform: scale(1.015);
-          transform: scale(1.015);
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-
-/* ANIMATION COEURS */
-.like {
-  cursor: pointer;
-  color: black;
-}
-
-.like:hover i:nth-child(1) {
-  display: none;
-}
-
-.like:hover i:nth-child(2) {
-  -webkit-transform: scale(0.015);
-          transform: scale(0.015);
-  color: #9356dc;
-  -webkit-animation: all 3s ease-in-out;
-          animation: all 3s ease-in-out;
 }
 
 /* MEDIA QUERIES */
