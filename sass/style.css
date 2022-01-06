@@ -13,6 +13,8 @@ body, html {
   font-family: 'Roboto';
   color: black;
   margin: 0;
+  z-index: 50;
+  background-color: white;
 }
 
 li {
@@ -33,13 +35,13 @@ h2 {
 }
 
 /* LOADER */
-.loader-wrapper {
-  width: 0%;
-  height: 0%;
-  position: absolute;
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #242f3f;
+  background-color: #353535;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,107 +51,79 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 90;
+  -webkit-animation: loading 3s ease-in-out;
+          animation: loading 3s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
-.loader {
+.loader .dot {
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  background-color: #F6F6F6;
+  border-radius: 50%;
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  -webkit-animation: loader 2s infinite ease;
-          animation: loader 2s infinite ease;
+  -webkit-animation: dotcolor 1.5s ease-in-out infinite;
+          animation: dotcolor 1.5s ease-in-out infinite;
 }
 
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  -webkit-animation: loader-inner 2s infinite ease-in;
-          animation: loader-inner 2s infinite ease-in;
+.loader .dot1 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 
-@-webkit-keyframes loader {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+.loader .dot2 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.loader .dot3 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes dotcolor {
+  from {
+    background-color: #9356dc;
   }
   50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    background-color: #FF79DA;
   }
-  75% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  to {
+    background-color: #99E2D0;
   }
 }
 
-@keyframes loader {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+@keyframes dotcolor {
+  from {
+    background-color: #9356dc;
   }
   50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    background-color: #FF79DA;
   }
-  75% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  to {
+    background-color: #99E2D0;
   }
 }
 
-@-webkit-keyframes loader-inner {
-  0% {
-    height: 0%;
+@-webkit-keyframes loading {
+  from {
+    z-index: 100;
   }
-  25% {
-    height: 0%;
-  }
-  50% {
-    height: 100%;
-  }
-  75% {
-    height: 100%;
-  }
-  100% {
-    height: 0%;
+  to {
+    opacity: 0.5;
+    z-index: -100;
   }
 }
 
-@keyframes loader-inner {
-  0% {
-    height: 0%;
+@keyframes loading {
+  from {
+    z-index: 100;
   }
-  25% {
-    height: 0%;
-  }
-  50% {
-    height: 100%;
-  }
-  75% {
-    height: 100%;
-  }
-  100% {
-    height: 0%;
+  to {
+    opacity: 0.5;
+    z-index: -100;
   }
 }
 
@@ -177,6 +151,37 @@ h2 {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
+}
+
+.food_card {
+  -webkit-animation: fadein 3s ease-in-out;
+          animation: fadein 3s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.fadein1, .fadein2, .fadein3, .fadein4 {
+  opacity: 0;
+}
+
+.fadein1 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.fadein2 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.fadein3 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.fadein4 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 /*header, main, footer {
@@ -223,7 +228,7 @@ input.book-btn:hover, input.order-btn:hover {
   transition: all .3s ease-in-out;
 }
 
-/* ANIMATION CHECK MENU */
+/* ANIMATIONS CHECK MENU */
 @-webkit-keyframes slidein {
   from {
     -webkit-transform: translateX(0px);
@@ -601,8 +606,6 @@ header .number:hover {
   margin: 20px;
   -webkit-box-shadow: 5px 5px 10px 5px #EAEAEA;
           box-shadow: 5px 5px 10px 5px #EAEAEA;
-  -webkit-animation: fadein 2s ease-in-out;
-          animation: fadein 2s ease-in-out;
   position: relative;
 }
 
