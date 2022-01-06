@@ -200,8 +200,10 @@ input.book-btn, input.order-btn {
     width: 0;    
     line-height: 0;
     position: relative;
-    i:nth-child(2) {
+    i:nth-child(1), i:nth-child(2) {
         position: absolute;
+    }
+    i:nth-child(2) {
         opacity: 0;
         background: linear-gradient(40deg, $secondary, $primary);
         background-clip: text;
@@ -210,6 +212,9 @@ input.book-btn, input.order-btn {
     }
     &:hover {
         cursor: pointer;
+        i:nth-child(1) {
+            opacity: 0;
+        }
         i:nth-child(2) {
             animation: opacity 2s ease-in;
         }
@@ -382,7 +387,8 @@ header {
             justify-content: center;
             .like {
                 font-size: 30px;
-                left: 5%;
+                top: -15px;
+                left: 30px;
             }
         }
         .food_title {
