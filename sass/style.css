@@ -13,7 +13,7 @@ body, html {
   font-family: 'Roboto';
   color: black;
   margin: 0;
-  z-index: 50;
+  z-index: 0;
   background-color: white;
 }
 
@@ -184,22 +184,9 @@ h2 {
           animation-delay: 1.5s;
 }
 
-/*header, main, footer {
-    animation: fadein 2s ease-in-out;
-}*/
-.food_card:nth-child(1) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-
-.food_card:nth-child(2) {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.food_card:nth-child(3) {
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+header, main {
+  -webkit-animation: fadein 2s ease-in-out;
+          animation: fadein 2s ease-in-out;
 }
 
 /* ANIMATION BOUTONS */
@@ -532,6 +519,7 @@ header .number:hover {
 
 #page img {
   height: 30vh;
+  z-index: 1;
   position: relative;
   -o-object-fit: cover;
      object-fit: cover;
