@@ -169,24 +169,27 @@ input.book-btn, input.order-btn {
 
 /* ANIMATION CHECK MENU */
 
-@keyframes checking {
+@keyframes slidein {
     from {
-        opacity: 1;
-        transform: translateX(90px);
-        overflow: hidden;
+        transform: translateX(0px);
     }
     to {
-        opacity: 1;
-        transform: translateX(0px)
+        transform: translateX(-70px);
+    }
+}
+
+@keyframes textslide {
+    from {
+        width: auto;
+    }
+    to {
+        width: 220px;
     }
 }
 
 @keyframes rotate {
     from {
         transform: rotate(0);
-    }
-    50% {
-        transform: rotate(180deg);
     }
     to {
         transform: rotate(360deg);
@@ -424,16 +427,25 @@ header {
             position: relative;
             &:hover {
                 box-shadow: 5px 5px 10px 5px $icon;
-                text-overflow: ellipsis;
                 .check {
                     background: $tertiary;
-                    border-radius: 0 25px 25px 0;                    
-                    animation: checking 0.5s ease-in-out;
+                    width: 90px;
                 }
                 i {
                     color: white;
                     opacity: 1;
                     animation: rotate 0.5s ease-in-out;
+                }
+                .price {
+                    animation: slidein 0.8s ease-out;
+                    animation-fill-mode:forwards;
+                }
+                h1, p {
+                    animation: textslide 1s ease-in-out;
+                    animation-fill-mode: forwards;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
             }
             h1 {
@@ -446,12 +458,18 @@ header {
                 right: 5%;
             }
             .check {
-                opacity: 1;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                border-radius: 0 25px 25px 0;
                 position: absolute;
                 right: 0;
                 top: 0;
-                width: 90px;
+                width: 0;
                 height: 100%;
+                transition: background 0.5s, width 1s;
             }
             i {
                 opacity: 0;

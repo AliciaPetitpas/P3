@@ -224,30 +224,42 @@ input.book-btn:hover, input.order-btn:hover {
 }
 
 /* ANIMATION CHECK MENU */
-@-webkit-keyframes checking {
+@-webkit-keyframes slidein {
   from {
-    opacity: 1;
-    -webkit-transform: translateX(90px);
-            transform: translateX(90px);
-    overflow: hidden;
-  }
-  to {
-    opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-70px);
+            transform: translateX(-70px);
   }
 }
-@keyframes checking {
+@keyframes slidein {
   from {
-    opacity: 1;
-    -webkit-transform: translateX(90px);
-            transform: translateX(90px);
-    overflow: hidden;
-  }
-  to {
-    opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-70px);
+            transform: translateX(-70px);
+  }
+}
+
+@-webkit-keyframes textslide {
+  from {
+    width: auto;
+  }
+  to {
+    width: 220px;
+  }
+}
+
+@keyframes textslide {
+  from {
+    width: auto;
+  }
+  to {
+    width: 220px;
   }
 }
 
@@ -255,10 +267,6 @@ input.book-btn:hover, input.order-btn:hover {
   from {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
   }
   to {
     -webkit-transform: rotate(360deg);
@@ -270,10 +278,6 @@ input.book-btn:hover, input.order-btn:hover {
   from {
     -webkit-transform: rotate(0);
             transform: rotate(0);
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
   }
   to {
     -webkit-transform: rotate(360deg);
@@ -605,14 +609,11 @@ header .number:hover {
 #page .restaurant .food .food_card:hover {
   -webkit-box-shadow: 5px 5px 10px 5px #808080;
           box-shadow: 5px 5px 10px 5px #808080;
-  text-overflow: ellipsis;
 }
 
 #page .restaurant .food .food_card:hover .check {
   background: #99E2D0;
-  border-radius: 0 25px 25px 0;
-  -webkit-animation: checking 0.5s ease-in-out;
-          animation: checking 0.5s ease-in-out;
+  width: 90px;
 }
 
 #page .restaurant .food .food_card:hover i {
@@ -620,6 +621,23 @@ header .number:hover {
   opacity: 1;
   -webkit-animation: rotate 0.5s ease-in-out;
           animation: rotate 0.5s ease-in-out;
+}
+
+#page .restaurant .food .food_card:hover .price {
+  -webkit-animation: slidein 0.8s ease-out;
+          animation: slidein 0.8s ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#page .restaurant .food .food_card:hover h1, #page .restaurant .food .food_card:hover p {
+  -webkit-animation: textslide 1s ease-in-out;
+          animation: textslide 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #page .restaurant .food .food_card h1 {
@@ -634,12 +652,26 @@ header .number:hover {
 }
 
 #page .restaurant .food .food_card .check {
-  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  border-radius: 0 25px 25px 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 90px;
+  width: 0;
   height: 100%;
+  -webkit-transition: background 0.5s, width 1s;
+  transition: background 0.5s, width 1s;
 }
 
 #page .restaurant .food .food_card i {
