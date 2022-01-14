@@ -9,7 +9,8 @@
 }
 
 /* SETTINGS PAR DEFAUT */
-body, html {
+body,
+html {
   font-family: 'Roboto';
   color: black;
   margin: 0;
@@ -160,7 +161,10 @@ h2 {
           animation-fill-mode: forwards;
 }
 
-.fadein1, .fadein2, .fadein3, .fadein4 {
+.fadein1,
+.fadein2,
+.fadein3,
+.fadein4 {
   opacity: 0;
 }
 
@@ -184,13 +188,15 @@ h2 {
           animation-delay: 1.5s;
 }
 
-header, main {
+header,
+main {
   -webkit-animation: fadein 2s ease-in-out;
           animation: fadein 2s ease-in-out;
 }
 
 /* ANIMATION BOUTONS */
-input.book-btn, input.order-btn {
+input.book-btn,
+input.order-btn {
   width: auto;
   padding: 15px;
   font-size: 18px;
@@ -204,7 +210,8 @@ input.book-btn, input.order-btn {
   cursor: pointer;
 }
 
-input.book-btn:hover, input.order-btn:hover {
+input.book-btn:hover,
+input.order-btn:hover {
   -webkit-filter: brightness(115%);
           filter: brightness(115%);
   -webkit-box-shadow: 5px 5px 10px 5px #808080;
@@ -222,8 +229,8 @@ input.book-btn:hover, input.order-btn:hover {
             transform: translateX(0px);
   }
   to {
-    -webkit-transform: translateX(-70px);
-            transform: translateX(-70px);
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
   }
 }
 @keyframes slidein {
@@ -232,8 +239,8 @@ input.book-btn:hover, input.order-btn:hover {
             transform: translateX(0px);
   }
   to {
-    -webkit-transform: translateX(-70px);
-            transform: translateX(-70px);
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
   }
 }
 
@@ -285,7 +292,8 @@ input.book-btn:hover, input.order-btn:hover {
   position: relative;
 }
 
-.like i:nth-child(1), .like i:nth-child(2) {
+.like i:nth-child(1),
+.like i:nth-child(2) {
   position: absolute;
 }
 
@@ -345,7 +353,12 @@ header {
   margin: 0;
 }
 
-header .logo, header .location, header .book, header h2, header .menu_list, header .number {
+header .logo,
+header .location,
+header .book,
+header h2,
+header .menu_list,
+header .number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,7 +453,10 @@ header .number:hover {
   padding: 5px 0 20px 0;
 }
 
-#main h2, #main .restaurants, #main .like, #main .new {
+#main h2,
+#main .restaurants,
+#main .like,
+#main .new {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -511,9 +527,11 @@ header .number:hover {
 /* MAIN PAGES RESTAURANTS */
 #page {
   margin: 0;
+  background-color: #F6F6F6;
 }
 
-#page .img_restaurant img, #page .restaurant {
+#page .img_restaurant img,
+#page .restaurant {
   width: 100%;
 }
 
@@ -528,9 +546,14 @@ header .number:hover {
 #page .restaurant {
   background-color: #F6F6F6;
   border-radius: 40px 40px 0 0;
+  position: relative;
+  top: -40px;
+  z-index: 2;
 }
 
-#page .restaurant .title, #page .restaurant .food, #page .restaurant .food_title {
+#page .restaurant .title,
+#page .restaurant .food,
+#page .restaurant .food_title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -614,14 +637,16 @@ header .number:hover {
           animation: rotate 0.5s ease-in-out;
 }
 
-#page .restaurant .food .food_card:hover .price {
+#page .restaurant .food .food_card:hover .price,
+#page .restaurant .food .food_card:hover .price h1 {
   -webkit-animation: slidein 0.8s ease-out;
           animation: slidein 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-#page .restaurant .food .food_card:hover h1, #page .restaurant .food .food_card:hover p {
+#page .restaurant .food .food_card:hover h1,
+#page .restaurant .food .food_card:hover p {
   -webkit-animation: textslide 1s ease-in-out;
           animation: textslide 1s ease-in-out;
   -webkit-animation-fill-mode: forwards;
@@ -636,7 +661,7 @@ header .number:hover {
 }
 
 #page .restaurant .food .food_card .price {
-  width: 40px;
+  width: 50px;
   position: absolute;
   top: 25%;
   right: 5%;
@@ -694,7 +719,9 @@ header .number:hover {
 }
 
 /* FOOTER */
-footer, .footer p, .footer ul {
+footer,
+.footer p,
+.footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -707,13 +734,17 @@ footer, .footer p, .footer ul {
   background-color: #353535;
 }
 
-footer p, .footer p p, .footer ul p {
+footer p,
+.footer p p,
+.footer ul p {
   font-family: "Shrikhand";
   color: white;
   font-size: 20px;
 }
 
-footer ul, .footer p ul, .footer ul ul {
+footer ul,
+.footer p ul,
+.footer ul ul {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -722,15 +753,21 @@ footer ul, .footer p ul, .footer ul ul {
   color: white;
 }
 
-footer ul a, .footer p ul a, .footer ul ul a {
+footer ul a,
+.footer p ul a,
+.footer ul ul a {
   color: white;
 }
 
-footer li, .footer p li, .footer ul li {
+footer li,
+.footer p li,
+.footer ul li {
   padding: 0 50px 0 50px;
 }
 
-footer li i, .footer p li i, .footer ul li i {
+footer li i,
+.footer p li i,
+.footer ul li i {
   padding-right: 10px;
 }
 
@@ -787,7 +824,8 @@ footer li i, .footer p li i, .footer ul li i {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 24px;
     font-weight: bolder;
   }
@@ -832,7 +870,7 @@ footer li i, .footer p li i, .footer ul li i {
     margin: 0;
   }
   header .menu_list li {
-    text-align: center;
+    text-align: left;
     margin: 0 60px 0 30px;
     width: 250px;
   }
@@ -868,9 +906,6 @@ footer li i, .footer p li i, .footer ul li i {
   #page img {
     height: 25vh;
   }
-  #page .restaurant {
-    top: 20vh;
-  }
   #page .restaurant .title {
     -webkit-box-pack: left;
         -ms-flex-pack: left;
@@ -897,14 +932,17 @@ footer li i, .footer p li i, .footer ul li i {
     margin: 10px;
     height: 55px;
   }
-  #page .restaurant .food .food_card h1, #page .restaurant .food .food_card p {
+  #page .restaurant .food .food_card h1,
+  #page .restaurant .food .food_card p {
     margin: 5px;
   }
   #page .restaurant .order {
     padding: 85px;
   }
   /* FOOTER */
-  footer, .footer p, .footer ul {
+  footer,
+  .footer p,
+  .footer ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -917,7 +955,9 @@ footer li i, .footer p li i, .footer ul li i {
             align-items: start;
     padding-left: 10px;
   }
-  footer li, .footer p li, .footer ul li {
+  footer li,
+  .footer p li,
+  .footer ul li {
     padding: 5px 0 0 0;
   }
 }
