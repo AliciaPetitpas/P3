@@ -808,9 +808,6 @@ footer li i,
   #page img {
     height: 35vh;
   }
-  #page .restaurant {
-    top: 30vh;
-  }
   #page .restaurant .food {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
