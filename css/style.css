@@ -249,7 +249,7 @@ input.order-btn:hover {
     width: auto;
   }
   to {
-    width: 180px;
+    width: 300px;
   }
 }
 
@@ -258,7 +258,7 @@ input.order-btn:hover {
     width: auto;
   }
   to {
-    width: 180px;
+    width: 300px;
   }
 }
 
@@ -828,6 +828,23 @@ footer li i,
   h2 {
     font-size: 24px;
     font-weight: bolder;
+  }
+  /* ANIMATION CHECK MENU */
+  @-webkit-keyframes textslide {
+    from {
+      width: auto;
+    }
+    to {
+      width: 180px;
+    }
+  }
+  @keyframes textslide {
+    from {
+      width: auto;
+    }
+    to {
+      width: 180px;
+    }
   }
   /* HEADER */
   header .logo {

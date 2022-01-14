@@ -188,7 +188,7 @@ input.order-btn {
         width: auto;
     }
     to {
-        width: 180px;
+        width: 300px;
     }
 }
 
@@ -608,6 +608,15 @@ footer,
     h2 {
         font-size: 24px;
         font-weight: bolder;
+    }
+    /* ANIMATION CHECK MENU */
+    @keyframes textslide {
+        from {
+            width: auto;
+        }
+        to {
+            width: 180px;
+        }
     }
     /* HEADER */
     header {
