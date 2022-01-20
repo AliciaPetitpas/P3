@@ -661,10 +661,10 @@ header .number:hover {
 }
 
 #page .restaurant .food .food_card .price {
-  width: 50px;
+  width: 45px;
   position: absolute;
-  top: 25%;
-  right: 5%;
+  top: 50%;
+  right: 1%;
 }
 
 #page .restaurant .food .food_card .check {
