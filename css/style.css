@@ -831,16 +831,22 @@ footer li i,
     from {
       width: auto;
     }
-    to {
-      width: 180px;
+    10% {
+      width: 75%;
+    }
+    100% {
+      width: 60%;
     }
   }
   @keyframes textslide {
     from {
       width: auto;
     }
-    to {
-      width: 180px;
+    10% {
+      width: 75%;
+    }
+    100% {
+      width: 60%;
     }
   }
   /* HEADER */
